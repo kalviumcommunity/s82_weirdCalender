@@ -27,3 +27,11 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server connected successfully at ${port}`);
 });
+
+import {Hono} from "hono";
+import {handle} from "@hono/node-server";
+
+export default {
+  fetch: handle(app),
+};
+/** */
